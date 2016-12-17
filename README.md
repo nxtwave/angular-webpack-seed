@@ -16,9 +16,10 @@ Scripts:
 * build - creates the bundled JS/HTML/CSS for the application in the target directory
 * start - starts the application for dev on localhost:8000
 
-# How it Works
+# How to Structure App for Webpack
 
-Normally, a Webpack build starts from the top level source and traverses to find all the code. But with
+It requires a few minor tweaks to support the Webpack build. Normally, a Webpack build 
+starts from the top level source and traverses to find all the code. But with
 an Angular application, the top level source is the application module with only Angular
 specific text references to the feature modules. 
 
@@ -67,6 +68,7 @@ each component and supporting script of the module.
 ```
 
 ### Home Feature Module
+
 ```
 (function() {
   'use strict';
@@ -76,5 +78,55 @@ each component and supporting script of the module.
 
   require('./home.component.js');
 
+})();
+```
+
+## Feature Components
+
+The build is configured to load the view templates into the application javascript (app.js).
+So instead of referencing the view templates, the component "requires" the template.
+
+### Layout Feature Component
+
+```
+(function() {
+  'use strict';
+
+  angular
+    .module('app.layout')
+    .component('layout', {
+      template: require('./layout.view.html'),
+      controller: LayoutController
+    });
+
+  function LayoutController() {
+    var vm = this;
+  }
+
+})();
+```
+
+### Home Feature Component
+
+```
+(function() {
+  'use strict';
+
+  angular
+    .module('app.home')
+    .component('home', {
+      template: require('./home.view.html'),
+      controller: HomeController
+    });
+
+  function HomeController() {
+    var vm = this;
+
+    vm.$onInit = function() {
+      console.log('app.home.oninit');
+    };
+
+  }
+  
 })();
 ```
