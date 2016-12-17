@@ -247,3 +247,52 @@ application bundle.
   }
 
 ```
+
+### Plugins
+
+* CommonsChunk - Chunks the vendor code modules together into the vendor bundle.
+
+* ExtractText - Sends the bundled CSS styles into a separate file instead of bundling
+within the app bundle.
+
+* Provide - It establishes references for JQuery with '$' and 'jquery'.
+
+* CopyWebpack - It is used to copy the index.html from the src/app directory to the
+public directory.
+
+```
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    }),
+
+    new ExtractTextPlugin({
+      filename: 'bundle.css',
+      disable: false,
+      allChunks: true
+    }),
+
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
+
+    new CopyWebpackPlugin(
+      [
+        {
+          from: './src/app/index.html', 
+          to: './index.html'
+        }
+      ], 
+      {copyUnmodified: true}
+    )
+    
+  ]
+```
+
+# Getting Started
+
+You can clone or fork this repository and then use it as a starting point for your new
+application by creating your own components and views. But I think you may likely use this 
+sample as a general guideline for your new or existing app. Or you might just use it to fix
+that 'one little thing' that has you stuck.
