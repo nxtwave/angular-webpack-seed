@@ -280,7 +280,9 @@ public directory.
           to: './index.html'
         }
       ], 
-      {copyUnmodified: true}
+      {
+        copyUnmodified: true
+      }
     )
     
   ]
