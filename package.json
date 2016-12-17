@@ -1,0 +1,30 @@
+{
+  "name": "angular-webpack-seed",
+  "version": "1.0.0",
+  "description": "Seed project for angular 1.5+ using webpack, javascript 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -p 8000 -c-1 ./public",
+    "build": "webpack"
+  },
+  "keywords": "angular javascript webpack",
+  "author": "Paul Fischer, nxtwave",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "webpack": "^2.1.0-beta.19",
+    "webpack-node-externals": "^1.5.4",
+    "http-server": "^0.9.0"
+  }
+}
