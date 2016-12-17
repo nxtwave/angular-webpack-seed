@@ -96,11 +96,15 @@ So instead of referencing the view templates, the component "requires" the templ
     .module('app.layout')
     .component('layout', {
       template: require('./layout.view.html'),
-      controller: LayoutController
+      controller: LayoutController,
+      controllerAs: 'vm'
     });
 
   function LayoutController() {
     var vm = this;
+
+    vm.title = 'Der Samen';
+
   }
 
 })();
@@ -116,17 +120,20 @@ So instead of referencing the view templates, the component "requires" the templ
     .module('app.home')
     .component('home', {
       template: require('./home.view.html'),
-      controller: HomeController
+      controller: HomeController,
+      controllerAs: 'vm'
     });
 
   function HomeController() {
     var vm = this;
+
+    vm.title = 'Home';
 
     vm.$onInit = function() {
       console.log('app.home.oninit');
     };
 
   }
-  
+
 })();
 ```
