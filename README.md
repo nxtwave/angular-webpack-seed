@@ -106,7 +106,6 @@ So instead of referencing the view templates, the component "requires" the templ
     vm.title = 'Der Samen';
 
   }
-
 })();
 ```
 
@@ -134,7 +133,6 @@ So instead of referencing the view templates, the component "requires" the templ
     };
 
   }
-
 })();
 ```
 
@@ -204,7 +202,6 @@ bundle created.
     filename: '[name].js',
     path: './public'
   }
-
 ```
 
 ### Loaders
@@ -245,7 +242,6 @@ application bundle.
 
     ]
   }
-
 ```
 
 ### Plugins
