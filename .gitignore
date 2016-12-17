@@ -56,11 +56,4 @@ jspm_packages
 .yarn-integrity
 
 
-public/fonts
-public/app.js
-public/app.js.map
-public/bundle.css
-public/bundle.css.map
-public/vendor.js
-public/vendor.js.map
-
+public/

@@ -156,14 +156,14 @@ in the src/app directory. It is copied to the output public directory by the bui
 </head>
 
 <body ng-app="app">
-
   <layout></layout>
-
+  
+  <script src="manifest.js"></script>
   <script src="vendor.js"></script>
   <script src="app.js"></script>
-
 </body>
 </html>
+
 ```
 
 ## Webpack Configuration
