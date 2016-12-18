@@ -64,7 +64,23 @@ module.exports = {
       jQuery: "jquery"
     }),
 
-    new CopyWebpackPlugin([{from: './src/app/index.html', to: './index.html'}], {copyUnmodified: true})
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: true
+      }
+    }),
+
+    new CopyWebpackPlugin(
+      [
+        {
+          from: './src/app/index.html',
+          to: './index.html'
+        }
+      ],
+        {
+          copyUnmodified: true
+        }
+    )
 
   ]
 

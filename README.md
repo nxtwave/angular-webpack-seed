@@ -246,12 +246,15 @@ application bundle.
 
 ### Plugins
 
-* CommonsChunk - Chunks the vendor code modules together into the vendor bundle.
+* CommonsChunk - Extracts the common modules from all the bundles and adds them to a common
+bundle.
 
 * ExtractText - Sends the bundled CSS styles into a separate file instead of bundling
 within the app bundle.
 
 * Provide - It establishes references for JQuery with '$' and 'jquery'.
+
+* Uglify - minimizes and optimizes the bundle output for production.
 
 * CopyWebpack - It is used to copy the index.html from the src/app directory to the
 public directory.
@@ -259,7 +262,7 @@ public directory.
 ```
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      names: ['vendor','manifest']
     }),
 
     new ExtractTextPlugin({
@@ -273,18 +276,24 @@ public directory.
       jQuery: "jquery"
     }),
 
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: true
+      }
+    }),
+
     new CopyWebpackPlugin(
       [
         {
-          from: './src/app/index.html', 
+          from: './src/app/index.html',
           to: './index.html'
         }
-      ], 
-      {
-        copyUnmodified: true
-      }
+      ],
+        {
+          copyUnmodified: true
+        }
     )
-    
+
   ]
 ```
 
