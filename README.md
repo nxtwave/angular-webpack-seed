@@ -304,7 +304,11 @@ application by creating your own components and views.
 
 ```
 git clone https://github.com/nxtwave/angular-webpack-seed.git
+
+npm install
+npm start
 ```
 
-But I think you may likely use this sample as a general guideline for your new or 
-existing app. Or you might just use it to fix that 'one little thing' that has you stuck.
+The seed application will build, start and run on your browser. But I think you may 
+likely use this sample as a general guideline for your new or existing app. Or you 
+might just use it to fix that 'one little thing' that has you stuck.
