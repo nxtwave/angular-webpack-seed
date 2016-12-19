@@ -7,9 +7,9 @@ Application Stack:
 
 * Angular 1.5+
 * Javascript 5
-* Webpack 2.x
 * Bootstrap 3.x
-* httpserver (for dev testing)
+* Webpack 2.x
+* Webpack-Dev-Server 2.x (for dev testing)
 
 Scripts:
 
